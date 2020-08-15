@@ -21,14 +21,25 @@ p {
 		font-size: 18px;
 }
 
+.external_link a:link {
+  color: #800;
+}
+
+/* visited link */
+.external_link a:visited {
+  color: #333;
+}
+
+/* mouse over link */
+.external_link a:hover {
+  text-decoration: none;
+}
+
+
 #title {
 		font-size: 82px;
 }
 
-#subtitle {
-		font-size: 18px;
-		padding-top: 30px;
-}
 
 .parallax {
 		  /* The image used */
@@ -123,7 +134,7 @@ p {
 .label-container{
 	position:fixed;
 
-	right:105px;
+	right:75px;
 	display:table;
 	visibility: hidden;
 }
@@ -155,6 +166,10 @@ p {
 	border-radius:30px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #333;
+}
+
+.float:hover {
+	background-color: #b20;
 }
 
 .my-float{
@@ -197,9 +212,7 @@ a.float:hover + div.label-container{
   #title {
 	  font-size: 10vw;
   }
-  #subtitle{
-	  font-size: 2.5vw;
-  }
+
   
   h1 {
 	  font-size: 28px;
