@@ -177,15 +177,21 @@ a.float:hover + div.label-container{
   .project {
     width:100%; /* The width is 100%, when the viewport is 800px or smaller */
 	height: auto;
+	max-height: 200px;
   }
   
+  .project img {
+			width: 100%;
+			filter: blur(3px);
+	}
+
   .parallax {
 	  background-attachment: fixed;
 	  min-height: 600px;
   }
   
   #title {
-	  font-size: 9vw;
+	  font-size: 10vw;
   }
   #subtitle{
 	  font-size: 2.5vw;
