@@ -1,0 +1,165 @@
+/**reference: W3schools HTML/CSS Tutorial**/
+
+html {
+		background-color: #eee;
+		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		}
+
+h1 {
+		text-align: center;
+		font-size: 36px;
+		padding: 0% 5%;
+}
+
+h2 {
+		text-align: center;
+		font-size: 24px;
+}
+
+p {
+		text-align: center;
+		font-size: 18px;
+}
+
+.parallax {
+		  /* The image used */
+		  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("cover.jpg");
+
+		  /* Set a specific height */
+		  min-height: 700px; 
+
+		  /* Create the parallax scrolling effect */
+		  background-attachment: fixed;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  width: 100%;
+		}
+		
+.centered {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  text-shadow: 2px 2px #800;
+		  color: white;
+		}
+
+.content {
+		  font-size:18px;
+		  padding: 3% 8%;
+		  color: #333;
+		  background-color: #ddd;
+		}
+		
+/*project section */
+
+.project {
+		  position: relative;
+		  width: 50%;
+		  height: 250px;
+		  float: left;
+		  overflow: hidden;
+		
+		}
+		
+.project img {
+			width: 100%;
+			filter: blur(4px);
+}
+
+
+.overlay {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  height: 100%;
+		  width: 100%;
+		  opacity: 0;
+		  transition: .5s ease;
+		  padding: 1% 3%;
+		  background-color: #eee;
+		}
+
+.project:hover .overlay {
+		  opacity: 0.9;
+		}
+		
+.project:hover .centered {
+		  opacity: 0;
+		  transition: 1s ease;
+		  
+		}
+		
+.text {
+		  color: #800;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		  text-align: center;
+		}
+
+.project_section {
+		resize: vertical;
+		overflow: auto;
+}
+
+/* floating buttons */
+
+.label-container{
+	position:fixed;
+
+	right:105px;
+	display:table;
+	visibility: hidden;
+}
+
+.label-text{
+	color:#FFF;
+	background:rgba(51,51,51,0.5);
+	display:table-cell;
+	vertical-align:middle;
+	padding:10px;
+	border-radius:3px;
+}
+
+.label-arrow{
+	display:table-cell;
+	vertical-align:middle;
+	color:#333;
+	opacity:0.5;
+}
+
+.float{
+	position:fixed;
+	width:55px;
+	height:55px;
+
+	right:2%;
+	background-color:#800;
+	color:#FFF;
+	border-radius:30px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #333;
+}
+
+.my-float{
+	font-size:20px;
+	margin-top:18px;
+}
+
+a.float + div.label-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+}
+
+a.float:hover + div.label-container{
+  visibility: visible;
+  opacity: 1;
+}
