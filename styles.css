@@ -176,6 +176,12 @@ a.float:hover + div.label-container{
 @media screen and (max-width:900px) {
   .project {
     width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+	height: auto;
+  }
+  
+  .parallax {
+	  background-attachment: fixed;
+	  min-height: 600px;
   }
   
   #title {
