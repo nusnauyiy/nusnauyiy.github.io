@@ -21,6 +21,15 @@ p {
 		font-size: 18px;
 }
 
+#title {
+		font-size: 82px;
+}
+
+#subtitle {
+		font-size: 18px;
+		padding-top: 30px;
+}
+
 .parallax {
 		  /* The image used */
 		  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("cover.JPG");
@@ -162,4 +171,29 @@ a.float + div.label-container {
 a.float:hover + div.label-container{
   visibility: visible;
   opacity: 1;
+}
+
+@media screen and (max-width:900px) {
+  .project {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+  
+  #title {
+	  font-size: 9vw;
+  }
+  #subtitle{
+	  font-size: 2.5vw;
+  }
+  
+  h1 {
+	  font-size: 28px;
+  }
+  
+  h2 {
+	  font-size: 18px;
+  }
+  
+  p {
+	  font-size: 14px;
+  }
 }
