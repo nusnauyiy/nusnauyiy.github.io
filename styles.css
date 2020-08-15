@@ -190,6 +190,10 @@ a.float:hover + div.label-container{
 	  min-height: 600px;
   }
   
+  .centered {
+	top: 45%;
+  }
+  
   #title {
 	  font-size: 10vw;
   }
