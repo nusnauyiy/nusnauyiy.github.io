@@ -1,0 +1,89 @@
+doctype html
+html(lang='en')
+	head
+		title Suzette's Page
+		meta(
+			name='viewport'
+			content='width=device-width, initial-scale=1'
+		)
+		link(
+			rel='stylesheet'
+			href='../css/styles.css'
+			type='text/css'
+		)
+		script(src = '../js/open_tab.js')
+		script(src = 'https://kit.fontawesome.com/ba14c24342.js')
+	body#main
+		div.section#about_section
+			img.title(src='../css/about-title.PNG')
+			.content My name is Suzette Sun, and I'm in my fourth year of a BSc. degree with a major in computer science at the University of British Columbia.
+				br
+				br 
+				| I love Java and java chip cookies, C++ and classical piano performaces, as well as some whimsical fun with graphic/web design.
+				| If you have some creative juice flowing down your veins, we'll be great friends! 
+				br 
+				br 
+				| Thank you for visiting!
+		div.section#tech_section
+			img.title(src='../css/tech-title.PNG')
+			.content
+				- var bear = ['bear', 'BearBuddies', 'Web-application inspired by tamagotchi where users will be taking care of and interacting with a virtual pet bear. nWHacks 2021 Honourble Mention.', 'https://devpost.com/software/bear-buddies-3barhl'];
+				- var oogway = ['oogway', 'Oogway Property Management DB', 'PHP database for a mock property management system using MySQL. Academic Project for UBC CPSC 304, Introduction to Relational Database.', 'https://github.com/mishsoup/CondoManagementDB'];
+				- var insight = ['insight', 'Insight UBC','Full stack web-application for flexibly querying data for UBC\'s courses and rooms. Academic Project for UBC CPSC 310, Introduction to Software Engineering'];
+				- var invoice = ['invoice', 'Invoice Generator', 'Java application that keep track of customers, bills ,and flights, as well as outputs pdf for invoices specifically for logistic companies', 'https://github.com/nusnauyiy/InvoiceGenerator'];
+				- var player = ['player', 'My Music Player', 'Java application that plays local .wav files and allows customizing of playlists and modes. Academic Project for UBC CPSC 210, Software Construction', 'https://github.com/nusnauyiy/MyMusicPlayer'];
+				- var cat = ['cat', 'My Cat Games', 'A collection of cat themed games compiled into an android app. Academic Project for Mobile Application class in high school.', 'https://github.com/nusnauyiy/BreakoutCatGamenew'];
+				- var contaminated = ['contaminated', 'Contaminated', '2D top-down shooter role-play game made in Unity made by my project team in UBC Game Development', 'https://github.com/RyanReiss/agda-pt3'];
+				- var prometheus = ['prometheus', 'Prometheus: Fire Stealer', '2D platform game made in Unity where users simulate Prometheus delivering fire to humans. Project for BC Game Jam 2021'];
+				- var planter = ['planter', 'Planner Planter', 'Android application where users are rewarded by growth of a virtual plant by completing their own agendas. Project for Cmd-f 2020.', 'https://github.com/rainacao/cmd-f-2020new'];
+				- var jack = ['jack', 'Slap Jack', 'Local lap Jack game for two player made with HTML, CSS and vanilla JavaScript. Submission for AP Computer Science Principles portfolio.', 'https://github.com/nusnauyiy/slap-jack'];
+				- var pulsar = ['pulsar', 'Pulsar Star KNN Classification', 'A procedure creating a classification model distinguishing between signals from pulsar stars and noises. Academic Project for UBC DSCI 100, Introduction to Data Science', 'https://github.com/nusnauyiy/DSCI100_project'];
+				- var png = ['png', 'PNG Manipulaor', 'An terminal-based image processor for PNG with multiple customizable effects for user. A compilation of assignments for UBC CPSC 221, Basic Algorithm and Data Structure.', 'https://github.com/nusnauyiy/Image-Manipulator'];
+				- var projects = [bear, oogway, insight, pulsar, invoice, player, contaminated, prometheus, cat, planter, png, jack];
+				.project-card-container
+					.project-card#fake-project-card
+					each project in projects
+						div(class='project-card' id='project-card-'+project[0])
+							div(class='project-card-title') #{project[1]}
+							if project[3]
+								a(href=project[3])
+									img(class='project-card-image', src='../images/'+project[0]+'.PNG')
+							else
+								img(class='project-card-image', src='../images/'+project[0]+'.PNG')
+							div(class='project-card-desc') #{project[2]}
+					.project-card#fake-project-card
+		div.section#art_section
+			img.title(src='../css/art-title.PNG')
+			.content#art-content
+				- var graphic_design = ["gd", "Graphic Design"];
+				- var logo_design = ["ld", "Logo Design", 1, 2, 3, 4];
+				- var editorial_illustration = ["ed", "Editorial Illustration", 1, 2, 3, 4, 5, 6, 7];
+				- var anime_illustration = ["ai", "Anime Illustration", 1, 2];
+				- var fine_arts = ["fa", "Fine Arts"];
+				- var promotional_illustration = ["pi", "Promotional Illustration", 1]
+
+				- var art_types = [graphic_design, logo_design, editorial_illustration, anime_illustration, fine_arts, promotional_illustration];
+				.art-tab-container
+					button.art-tab#fake-tab
+					each type in art_types
+						button(class='art-tab', id = type[0] + '-tab', onClick="open_tab(event,'"+type[0]+"-container', 'art-card-container', 'art-tab')") #{type[1]}
+				div(class='art-gallery-container')
+					each type in art_types
+						div(class='art-card-container', id=type[0]+ '-container')
+							.project-card#fake-project-card
+							- var i = 2
+							while i < type.length
+								div(class='art-card')
+									img(class='art-card-image', src='../images/'+type[0]+type[i]+".PNG")
+								- i++
+							.project-card#fake-project-card
+		.nav_buttons
+			.float#fake_float
+			.float.active(style='bottom: 200px;', onClick = "open_tab(event, 'about_section', 'section', 'float')")
+				i(class='fa fa-address-card my-float')
+
+			.float(style='bottom: 120px;', onClick = "open_tab(event, 'tech_section', 'section', 'float')")
+				i(class='fa fa-project-diagram my-float')
+
+			.float(style='bottom: 40px;', onClick = "open_tab(event, 'art_section', 'section', 'float')")
+				i(class='fa fa-palette my-float')       

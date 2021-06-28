@@ -1,0 +1,417 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 22px;
+  font-family: Brush Script MT, cursive;
+}
+#main {
+  background-image: url("footer.JPG"), url("website-header.PNG");
+  background-position: bottom left, top right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 30%, cover;
+}
+.intro_image {
+  position: relative;
+  background-image: url("suzette.jpg");
+  min-height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: 1.5s ease-out 0s 1 zoomIntro;
+  transform: scale(1.1);
+  z-index: -1;
+}
+#intro_button {
+  padding: 20px 5px;
+  background-color: #fff;
+  border: 5px solid #000;
+  border-radius: 50%;
+  box-shadow: inset -30px -20px #fff38e;
+  font-size: 1.5vw;
+  font-weight: bold;
+  position: fixed;
+  top: 85%;
+  left: 40%;
+  animation: 2s ease-out 0s 1 bounceIntroButtons;
+  transition: 1.5s;
+}
+#intro_button:hover {
+  color: transparent;
+  transform: scale(20);
+  border: 5px solid #72ffe7;
+  box-shadow: -1px -10px #ff6684;
+}
+.section {
+  width: 75%;
+  height: 80%;
+  position: absolute;
+  left: 3%;
+}
+#about_section {
+  visibility: visible;
+}
+#tech_section {
+  visibility: hidden;
+}
+#art_section {
+  visibility: hidden;
+  width: 85%;
+}
+.title {
+  width: 40vw;
+}
+.content {
+  position: absolute;
+  width: 80%;
+  right: 0;
+}
+#art-content {
+  transform: translateX(-15%);
+}
+.project-card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  height: 55vh;
+  width: 100%;
+  padding-top: 3%;
+  background-color: transparent;
+}
+.project-card-container after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, #fff, rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,0), #fff 100%);
+  background-position: right;
+  height: 55vh;
+  width: 100%;
+  padding-top: 3%;
+}
+.project-card {
+  flex: 0 0 auto;
+  background-color: #fff;
+  margin-right: 0;
+  position: relative;
+  height: 50vh;
+  text-align: center;
+  box-shadow: inset 1vw 0.5vh #ff6684;
+  padding-left: 1vw;
+  padding-top: 0.5vh;
+  transform: scale(0.8);
+  width: 55%;
+}
+.project-card:hover {
+  transform: scale(1.15);
+  transition: 0.5s;
+}
+.project-card-container,
+.project-card-container-flexbox,
+.art-card-container,
+.art-card-container-flexbox {
+  -webkit-overflow-scrolling: touch;
+}
+.project-card-container::-webkit-scrollbar,
+.project-card-container-flexbox::-webkit-scrollbar,
+.art-card-container::-webkit-scrollbar,
+.art-card-container-flexbox::-webkit-scrollbar {
+  display: none;
+}
+img.project-card-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  width: 95%;
+  min-height: 65%;
+}
+.project-card-title {
+  color: #fff;
+  text-shadow: 2px 2px 1px #000;
+  font-size: 2vw;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 60%;
+  width: 100%;
+}
+#fake-project-card {
+  width: 25vh;
+  background-color: transparent;
+  box-shadow: none;
+}
+.project-card-desc {
+  font-size: 16px;
+}
+.art-tab-container {
+  float: left;
+  width: 15%;
+  height: 30%;
+}
+.art-tab {
+  display: block;
+  color: #000;
+  background-image: linear-gradient(to bottom right, #fff, #fff38e);
+  border: none;
+  padding: 5%;
+  margin-bottom: 2%;
+  width: 100%;
+  box-shadow: inset -2px -2px #ff6684;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: inherit;
+}
+.art-tab:hover {
+  box-shadow: inset 1vw 0.5vh #ff6684;
+}
+.art-tab + .active {
+  box-shadow: none;
+  background-image: none;
+  background-color: #ff6684;
+  color: #fff;
+}
+#fake-tab {
+  display: none;
+}
+/* Style the buttons that are used to open the tab content */
+.art-tab button {
+  display: block;
+  background-color: inherit;
+  color: #000;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.art-gallery-container {
+  float: left;
+  width: 80%;
+  height: 30%;
+}
+.art-card-container {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  height: 55vh;
+  width: 85%;
+  padding-top: 3%;
+  background-color: transparent;
+}
+.art-card {
+  flex: 0 0 auto;
+  background-color: #fff;
+  margin-right: 0;
+  position: relative;
+  height: 45vh;
+  text-align: center;
+  box-shadow: inset 1vw 0.5vh #ff6684;
+  padding-left: 1vw;
+  padding-top: 0.5vh;
+  transform: scale(0.8);
+}
+.art-card:hover {
+  transform: scale(1.15);
+  transition: 0.5s;
+}
+img.art-card-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: inherit;
+}
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 2%;
+  background-color: #ff6684;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 5px 5px #000;
+  transition: 0.5s;
+}
+.float:hover {
+  box-shadow: -2px -2px #fff;
+  transform: scale(1.3);
+}
+#fake-float {
+  display: none;
+}
+.float + .active {
+  color: #ff6684;
+  background-color: #fff;
+}
+.my-float {
+  font-size: 25px;
+  margin-top: 18px;
+}
+@-moz-keyframes zoomIntro {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    transform: matrix(2.2, -0.1, 0.1, 2.2, 0, 0);
+    opacity: 20%;
+  }
+  36% {
+    transform: scale(1);
+  }
+  68% {
+    transform: scale(1.25);
+  }
+  84% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@-webkit-keyframes zoomIntro {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    transform: matrix(2.2, -0.1, 0.1, 2.2, 0, 0);
+    opacity: 20%;
+  }
+  36% {
+    transform: scale(1);
+  }
+  68% {
+    transform: scale(1.25);
+  }
+  84% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@-o-keyframes zoomIntro {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    transform: matrix(2.2, -0.1, 0.1, 2.2, 0, 0);
+    opacity: 20%;
+  }
+  36% {
+    transform: scale(1);
+  }
+  68% {
+    transform: scale(1.25);
+  }
+  84% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes zoomIntro {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    transform: matrix(2.2, -0.1, 0.1, 2.2, 0, 0);
+    opacity: 20%;
+  }
+  36% {
+    transform: scale(1);
+  }
+  68% {
+    transform: scale(1.25);
+  }
+  84% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@-moz-keyframes bounceIntroButtons {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes bounceIntroButtons {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-o-keyframes bounceIntroButtons {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes bounceIntroButtons {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
