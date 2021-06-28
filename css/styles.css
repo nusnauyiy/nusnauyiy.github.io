@@ -9,7 +9,7 @@ body {
   font-family: Brush Script MT, cursive;
 }
 #main {
-  background-image: url("footer.JPG"), url("website-header.PNG");
+  background-image: url("footer.jpg"), url("website_header.png");
   background-position: bottom left, top right;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -52,6 +52,7 @@ body {
   height: 80%;
   position: absolute;
   left: 3%;
+  animation: fadeEffect 1s;
 }
 #about_section {
   visibility: visible;
@@ -252,7 +253,7 @@ img.art-card-image {
   box-shadow: -2px -2px #fff;
   transform: scale(1.3);
 }
-#fake-float {
+#fake_float {
   display: none;
 }
 .float + .active {
@@ -412,6 +413,38 @@ img.art-card-image {
   }
   100% {
     transform: scale(1);
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
