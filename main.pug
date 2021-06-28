@@ -28,13 +28,13 @@ html(lang='en')
 			img.title(src='../css/tech_title.png')
 			.content
 				- var bear = ['bear', 'BearBuddies', 'Web-application inspired by tamagotchi where users will be taking care of and interacting with a virtual pet bear. nWHacks 2021 Honourble Mention.', 'https://devpost.com/software/bear-buddies-3barhl'];
-				- var oogway = ['oogway', 'Oogway Property Management DB', 'PHP database for a mock property management system using MySQL. Academic Project for UBC CPSC 304, Introduction to Relational Database.', 'https://github.com/mishsoup/CondoManagementDB'];
+				- var oogway = ['oogway0', 'Oogway Property Management DB', 'PHP database for a mock property management system using MySQL. Academic Project for UBC CPSC 304, Introduction to Relational Database.', 'https://github.com/mishsoup/CondoManagementDB'];
 				- var insight = ['insight', 'Insight UBC','Full stack web-application for flexibly querying data for UBC\'s courses and rooms. Academic Project for UBC CPSC 310, Introduction to Software Engineering'];
 				- var invoice = ['invoice', 'Invoice Generator', 'Java application that keep track of customers, bills ,and flights, as well as outputs pdf for invoices specifically for logistic companies', 'https://github.com/nusnauyiy/InvoiceGenerator'];
 				- var player = ['player', 'My Music Player', 'Java application that plays local .wav files and allows customizing of playlists and modes. Academic Project for UBC CPSC 210, Software Construction', 'https://github.com/nusnauyiy/MyMusicPlayer'];
-				- var cat = ['cat', 'My Cat Games', 'A collection of cat themed games compiled into an android app. Academic Project for Mobile Application class in high school.', 'https://github.com/nusnauyiy/BreakoutCatGamenew'];
-				- var contaminated = ['contaminated', 'Contaminated', '2D top-down shooter role-play game made in Unity made by my project team in UBC Game Development', 'https://github.com/RyanReiss/agda-pt3'];
-				- var prometheus = ['prometheus', 'Prometheus: Fire Stealer', '2D platform game made in Unity where users simulate Prometheus delivering fire to humans. Project for BC Game Jam 2021'];
+				- var cat = ['cat0', 'My Cat Games', 'A collection of cat themed games compiled into an android app. Academic Project for Mobile Application class in high school.', 'https://github.com/nusnauyiy/BreakoutCatGamenew'];
+				- var contaminated = ['contaminated0', 'Contaminated', '2D top-down shooter role-play game made in Unity made by my project team in UBC Game Development', 'https://github.com/RyanReiss/agda-pt3'];
+				- var prometheus = ['prometheus0', 'Prometheus: Fire Stealer', '2D platform game made in Unity where users simulate Prometheus delivering fire to humans. Project for BC Game Jam 2021'];
 				- var planter = ['planter', 'Planner Planter', 'Android application where users are rewarded by growth of a virtual plant by completing their own agendas. Project for Cmd-f 2020.', 'https://github.com/rainacao/cmd-f-2020new'];
 				- var jack = ['jack', 'Slap Jack', 'Local lap Jack game for two player made with HTML, CSS and vanilla JavaScript. Submission for AP Computer Science Principles portfolio.', 'https://github.com/nusnauyiy/slap-jack'];
 				- var pulsar = ['pulsar', 'Pulsar Star KNN Classification', 'A procedure creating a classification model distinguishing between signals from pulsar stars and noises. Academic Project for UBC DSCI 100, Introduction to Data Science', 'https://github.com/nusnauyiy/DSCI100_project'];
@@ -47,9 +47,9 @@ html(lang='en')
 							div(class='project-card-title') #{project[1]}
 							if project[3]
 								a(href=project[3])
-									img(class='project-card-image', src='../images/'+project[0]+'.PNG')
+									img(class='project-card-image', src='../images/'+project[0]+'.png')
 							else
-								img(class='project-card-image', src='../images/'+project[0]+'.PNG')
+								img(class='project-card-image', src='../images/'+project[0]+'.png')
 							div(class='project-card-desc') #{project[2]}
 					.project-card#fake-project-card
 		div.section#art_section
