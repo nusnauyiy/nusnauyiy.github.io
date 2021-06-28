@@ -24,7 +24,17 @@ function open_tab(evt, id, content_container, tab_name) {
     tabcontent[i].style.visibility = "hidden";
   }
 
+  tabcontent = document.getElementsByClassName("art-card-container");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.visibility = "hidden";
+  }
+
   tablinks = document.getElementsByClassName(tab_name);
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  tablinks = document.getElementsByClassName("art-tab");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
