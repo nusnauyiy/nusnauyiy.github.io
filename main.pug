@@ -16,14 +16,23 @@ html(lang='en')
 	body#main
 		div.section#about_section
 			img.title(src='../css/about_title.png')
-			.content My name is Suzette Sun, and I'm in my fourth year of a BSc. degree with a major in computer science at the University of British Columbia.
+			.content My name is Suzette Sun, from the City of Flower and raised in the Windy City. I'm in my fourth year of a BSc. degree with a major in computer science and a minor in statistics at the University of British Columbia.
 				br
 				br 
-				| I love Java and java chip cookies, C++ and classical piano performaces, as well as some whimsical fun with graphic/web design.
-				| If you have some creative juice flowing down your veins, we'll be great friends! 
+				| I current work as a Junior Software Engineer at 
+				a(href = "https://www.tasktop.com/") Tasktop Technologies
+				| . I intend to try out different facets of computer science and design as I develop my career.
 				br 
 				br 
+				| On this page, you can explore some of my technical projects and art work. I hope you find them enjoyable!
+				br 
+				br
 				| Thank you for visiting!
+				br 
+				br 
+				| If anything catches your attention, please feel free to contact me 
+				a(href = "mailto: y.suzette.sun@outlook.com") here
+				|  :)
 		div.section#tech_section
 			img.title(src='../css/tech_title.png')
 			.content
@@ -58,11 +67,11 @@ html(lang='en')
 				- var graphic_design = ["gd", "Graphic Design"];
 				- var logo_design = ["ld", "Logo Design", 1, 2, 3, 4];
 				- var editorial_illustration = ["ed", "Editorial Illustration", 1, 2, 3, 4, 5, 6, 7];
-				- var anime_illustration = ["ai", "Anime Illustration", 1, 2];
+				- var anime_illustration = ["ai", "Anime Character Design", 1, 2];
 				- var fine_arts = ["fa", "Fine Arts"];
 				- var promotional_illustration = ["pi", "Promotional Illustration", 1]
 
-				- var art_types = [graphic_design, logo_design, editorial_illustration, anime_illustration, fine_arts, promotional_illustration];
+				- var art_types = [logo_design, editorial_illustration, anime_illustration, fine_arts, promotional_illustration];
 				.art-tab-container
 					button.art-tab#fake-tab
 					each type in art_types
