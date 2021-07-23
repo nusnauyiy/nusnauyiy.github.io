@@ -13,12 +13,17 @@ body
 	font-size 22px
 	font-family Trebuchet MS, sans-serif
 	
+	@media screen and (max-width: 700px)
+		font-size 18px
+	
 #main
-	background-image url("footer.jpg"), url("website_header.png")
+	background-image url("footer.webp"), url("website_header.webp")
 	background-position bottom left, top right
 	background-repeat no-repeat
 	background-attachment fixed
 	background-size 30%, cover  
+	@media screen and (max-width: 800px) and (min-height: 700px)
+		background-size 30vh, cover  
 	
 @keyframes zoomIntro
 	0%
@@ -86,7 +91,7 @@ intro_button_position(top, left)
 	
 .intro_image
 	position  relative
-	background_image "suzette.jpg" center
+	background_image "suzette.webp" center
 	animation 1.5s ease-out 0s 1 zoomIntro
 	transform scale(intro-scale)
 	z-index  -1
@@ -116,13 +121,30 @@ intro_button_position(top, left)
 .title
 	width 40vw
 	
+	@media screen and (max-width: 1100px)
+		width 450px
+	
 .content
 	position absolute
 	width 80%
-	right 0
+	right 5%
+	text-shadow 3px 1px 1px white, 1px 3px 1px white
+	overflow scroll
+	scrollbar-width none
+	-ms-overflow-style none 
+	padding-bottom 10%
+	@media screen and (max-width: 1000px)
+		left 2%
+		right 10%
+		translateY 25%
+	&::-webkit-scrollbar
+		display none
 	
 #art-content
 	transform translateX(-15%)
+	overflow visible
+	@media screen and (max-width: 1000px)
+		transform none
 
 //project card horizontal scrolling
 horizontal-gallery-container(height, width, fade)
@@ -160,8 +182,11 @@ horizontal-gallery-card(height, margin_right, color)
 	padding-top 0.5vh
 	transform scale(0.8)
 	&:hover
-		transform scale(1.15)
+		transform scale(1.1)
 		transition 0.5s
+		z-index: 10
+		@media screen and (max-width: 1000px)
+			transform scale(1)
 
 .project-card-container
 	horizontal-gallery-container 55vh 100% true
@@ -169,6 +194,7 @@ horizontal-gallery-card(height, margin_right, color)
 .project-card
 	horizontal-gallery-card 50vh 0 my_salmon
 	width 55%
+	min-width 300px
 		
 .project-card-container, .project-card-container-flexbox, .art-card-container, .art-card-container-flexbox
 	-webkit-overflow-scrolling  touch
@@ -194,9 +220,11 @@ img.project-card-image
 	width 100%
 		
 #fake-project-card
-	width 25vh
-	background-color  transparent
+	width 20vw
+	background-color transparent
 	box-shadow none
+	@media screen and (max-width: 1000px)
+		display none
 	
 .project-card-desc
 	font-size 16px
@@ -205,6 +233,9 @@ img.project-card-image
 .art-tab-container
 	float left
 	width 15%
+	@media screen and (max-width: 1000px)
+		width 100%
+		float none
   
 .art-tab
 	display block
@@ -222,6 +253,11 @@ img.project-card-image
 	font-size 2vh
 	&:hover
 		box-shadow inset 1vw 0.5vh my_salmon
+	@media screen and (max-width: 1000px)
+		width auto
+		display inline-block
+		padding 2%
+
 .art-tab + .active
 	box-shadow none
 	background-image none
@@ -252,11 +288,15 @@ img.project-card-image
 .art-card-container
 	position fixed
 	visibility hidden
-	top 0
+	// top 0
 	horizontal-gallery-container 55vh 85% false//(1- .art-tab-container.width)
+	// @media screen and (max-width: 1000px)
+	// 	float none
 	
 .art-card
-	horizontal-gallery-card 45vh 0 my_salmon
+	horizontal-gallery-card 50vh 0 my_salmon
+	@media screen and (max-width: 1000px)
+		horizontal-gallery-card 40vh 0 my_salmon
 
 img.art-card-image
 	display block

@@ -8,16 +8,26 @@ body {
   font-size: 22px;
   font-family: Trebuchet MS, sans-serif;
 }
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 18px;
+  }
+}
 #main {
-  background-image: url("footer.jpg"), url("website_header.png");
+  background-image: url("footer.webp"), url("website_header.webp");
   background-position: bottom left, top right;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 30%, cover;
 }
+@media screen and (max-width: 800px) and (min-height: 700px) {
+  #main {
+    background-size: 30vh, cover;
+  }
+}
 .intro_image {
   position: relative;
-  background-image: url("suzette.jpg");
+  background-image: url("suzette.webp");
   min-height: 1000px;
   background-attachment: fixed;
   background-position: center;
@@ -67,13 +77,39 @@ body {
 .title {
   width: 40vw;
 }
+@media screen and (max-width: 1100px) {
+  .title {
+    width: 450px;
+  }
+}
 .content {
   position: absolute;
   width: 80%;
-  right: 0;
+  right: 5%;
+  text-shadow: 3px 1px 1px #fff, 1px 3px 1px #fff;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 10%;
+}
+@media screen and (max-width: 1000px) {
+  .content {
+    left: 2%;
+    right: 10%;
+    translateY: 25%;
+  }
+}
+.content::-webkit-scrollbar {
+  display: none;
 }
 #art-content {
   transform: translateX(-15%);
+  overflow: visible;
+}
+@media screen and (max-width: 1000px) {
+  #art-content {
+    transform: none;
+  }
 }
 .project-card-container {
   display: flex;
@@ -110,10 +146,17 @@ body {
   padding-top: 0.5vh;
   transform: scale(0.8);
   width: 55%;
+  min-width: 300px;
 }
 .project-card:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   transition: 0.5s;
+  z-index: 10;
+}
+@media screen and (max-width: 1000px) {
+  .project-card:hover {
+    transform: scale(1);
+  }
 }
 .project-card-container,
 .project-card-container-flexbox,
@@ -146,9 +189,14 @@ img.project-card-image {
   width: 100%;
 }
 #fake-project-card {
-  width: 25vh;
+  width: 20vw;
   background-color: transparent;
   box-shadow: none;
+}
+@media screen and (max-width: 1000px) {
+  #fake-project-card {
+    display: none;
+  }
 }
 .project-card-desc {
   font-size: 16px;
@@ -156,6 +204,12 @@ img.project-card-image {
 .art-tab-container {
   float: left;
   width: 15%;
+}
+@media screen and (max-width: 1000px) {
+  .art-tab-container {
+    width: 100%;
+    float: none;
+  }
 }
 .art-tab {
   display: block;
@@ -174,6 +228,13 @@ img.project-card-image {
 }
 .art-tab:hover {
   box-shadow: inset 1vw 0.5vh #ff6684;
+}
+@media screen and (max-width: 1000px) {
+  .art-tab {
+    width: auto;
+    display: inline-block;
+    padding: 2%;
+  }
 }
 .art-tab + .active {
   box-shadow: none;
@@ -205,7 +266,6 @@ img.project-card-image {
 .art-card-container {
   position: fixed;
   visibility: hidden;
-  top: 0;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -220,7 +280,7 @@ img.project-card-image {
   background-color: #fff;
   margin-right: 0;
   position: relative;
-  height: 45vh;
+  height: 50vh;
   text-align: center;
   box-shadow: inset 1vw 0.5vh #ff6684;
   padding-left: 1vw;
@@ -228,8 +288,38 @@ img.project-card-image {
   transform: scale(0.8);
 }
 .art-card:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   transition: 0.5s;
+  z-index: 10;
+}
+@media screen and (max-width: 1000px) {
+  .art-card:hover {
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .art-card {
+    flex: 0 0 auto;
+    background-color: #fff;
+    margin-right: 0;
+    position: relative;
+    height: 40vh;
+    text-align: center;
+    box-shadow: inset 1vw 0.5vh #ff6684;
+    padding-left: 1vw;
+    padding-top: 0.5vh;
+    transform: scale(0.8);
+  }
+  .art-card:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    z-index: 10;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 1000px) {
+  .art-card:hover {
+    transform: scale(1);
+  }
 }
 img.art-card-image {
   display: block;
